@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15sp"
+        android:text="@string/convert"
+        android:textSize="25sp"
+        android:textColor="@color/main_green"
+        android:id="@+id/convert"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency \nConverter"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="35dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/main_blue"
+        android:id="@+id/currency"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25sp"
+        android:text="@string/from"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:id="@+id/from"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_gravity="end"
+        android:text="@string/afn"
+        android:spinnerMode="dropdown"
+        android:id="@+id/spinner1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="25sp"
+        android:text="@string/to"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:id="@+id/to"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_gravity="end"
+        android:text="@string/afn"
+        android:spinnerMode="dropdown"
+        android:id="@+id/spinenr2"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25sp"
+        android:text="@string/amount"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:id="@+id/amount"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edit_text_input_with_border"
+        android:inputType="numberDecimal"
+        android:hint="@string/converted_amount"
+        android:textSize="16sp"
+        android:id="@+id/edit"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_main_round"
+        android:text="@string/convert"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="25sp"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:id="@+id/lytResult"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        >
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtSecondCurrencyName"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

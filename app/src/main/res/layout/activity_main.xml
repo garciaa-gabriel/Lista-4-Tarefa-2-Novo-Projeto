@@ -32,6 +32,7 @@
         android:id="@+id/currency"
         />
 
+    // START FROM
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,40 +44,80 @@
         android:id="@+id/from"
         />
 
-    <Spinner
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_gravity="end"
-        android:text="@string/afn"
-        android:spinnerMode="dropdown"
-        android:id="@+id/spinner1"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/br"
+        android:id="@+id/frombr"
         />
 
+    <CheckBox
+        android:id="@+id/fromuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/uy" />
+
+    <CheckBox
+        android:id="@+id/fromus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/us" />
+
+    // END FROM
+
+
+    // START TO
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="25sp"
+        android:layout_marginTop="-185dp"
+        android:layout_marginLeft="170dp"
         android:text="@string/to"
         android:textSize="25sp"
         android:textColor="@color/black"
         android:id="@+id/to"
         />
 
-    <Spinner
+    <CheckBox
+        android:id="@+id/tobr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="175dp"
         android:layout_marginEnd="30dp"
-        android:layout_gravity="end"
-        android:text="@string/afn"
-        android:spinnerMode="dropdown"
-        android:id="@+id/spinenr2"
-        />
+        android:onClick="onCheckboxClicked"
+        android:text="@string/br" />
+
+    <CheckBox
+        android:id="@+id/touy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/uy" />
+
+    <CheckBox
+        android:id="@+id/tous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:onClick="onCheckboxClicked"
+        android:text="@string/us" />
+
+    // END TO
 
     <TextView
         android:layout_width="wrap_content"
@@ -95,11 +136,11 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/edit_text_input_with_border"
+        android:background="@drawable/edit_text_input"
         android:inputType="numberDecimal"
         android:hint="@string/converted_amount"
         android:textSize="16sp"
-        android:id="@+id/edit"
+        android:id="@+id/editamount"
         />
 
     <Button
@@ -116,7 +157,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="25sp"
-
+        android:id="@+id/btsend"
         />
 
     <RelativeLayout
@@ -136,7 +177,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtSecondCurrencyName"
+            android:id="@+id/txtresult"
             android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>

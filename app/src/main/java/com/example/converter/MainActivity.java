@@ -3,25 +3,21 @@ package com.example.converter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
-    private CheckBox frombr;
-    private CheckBox fromuy;
-    private CheckBox fromus;
-
-    private CheckBox tobr;
-    private CheckBox touy;
-    private CheckBox tous;
-
-    private TextView txtresult;
-    private EditText editamount;
+    private EditText amount;
     private Button btsend;
 
     @Override
@@ -31,57 +27,92 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Converter");
         getSupportActionBar().hide();
 
-        frombr = findViewById(R.id.frombr);
-        fromuy = findViewById(R.id.fromuy);
-        fromus = findViewById(R.id.fromus);
+        final RadioButton frombr =(RadioButton)findViewById(R.id.frombr);
+        final RadioButton fromuy =(RadioButton)findViewById(R.id.fromuy);
+        final RadioButton fromus =(RadioButton)findViewById(R.id.fromus);
 
-        tobr = findViewById(R.id.tobr);
-        touy = findViewById(R.id.touy);
-        tous = findViewById(R.id.tous);
+        final RadioButton tobr =(RadioButton)findViewById(R.id.tobr);
+        final RadioButton touy =(RadioButton)findViewById(R.id.touy);
+        final RadioButton tous =(RadioButton)findViewById(R.id.tous);
 
+        final TextView ver_check = (TextView)findViewById(R.id.txtresult);
+        final EditText amount = (EditText) findViewById(R.id.editamount);
 
-        txtresult = findViewById(R.id.txtresult);
-        btsend = findViewById(R.id.btsend);
+        btsend = (Button) findViewById(R.id.btsend);
+        btsend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double conversao = 0.0;
+                double peso = 8.46;
+                double dolar = 5.02;
+                double cotacaodolp = 0.02347;
 
-        btsend.setOnClickListener(this::OnClick);
-    }
+                String valor = amount.getText().toString().trim();
 
-    @Override
-    public void OnClick(View view){
-        if(view.getId()==R.id.btsend){
-
-        }
-    }
-
-    @Override
-    public void onCheckboxClicked(View view) {
-        editamount = findViewById(R.id.editamount);
-        String name = editamount.getText().toString();
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.frombr:
-                if (checked) {
-                    switch(view.getId()) {
-                        case R.id.tobr:
-                            if (checked){
-                                Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
-                            }
-                    }
+                if(frombr.isChecked() && tobr.isChecked()){
+                    ver_check.setText(valor + " BRL");
                 }
-            else
-                // Remove the meat
-                break;
-            case R.id.checkbox_cheese:
-                if (checked)
-                // Cheese me
-            else
-                // I'm lactose intolerant
-                break;
-            // TODO: Veggie sandwich
-        }
-    }
+                else if(frombr.isChecked() && touy.isChecked()){
+                    conversao = (Double.valueOf(valor) * peso);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
 
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " UYU");
+                }
+                else if(frombr.isChecked() && tous.isChecked()){
+                    conversao = (Double.valueOf(valor) / dolar);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
+
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " USD");
+                }
+                else if(fromuy.isChecked() && touy.isChecked()){
+                    ver_check.setText(valor + " UYU");
+                }
+                else if(fromuy.isChecked() && tobr.isChecked()){
+                    conversao = (Double.valueOf(valor) / peso);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
+
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " BRL");
+                }
+                else if(fromuy.isChecked() && tous.isChecked()){
+                    conversao = (Double.valueOf(valor) * cotacaodolp);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
+
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " USD");
+                }
+                else if(fromus.isChecked() && tous.isChecked()){
+                    ver_check.setText(valor + " USD");
+                }
+                else if(fromus.isChecked() && tobr.isChecked()){
+                    conversao = (Double.valueOf(valor) * dolar);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
+
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " BRL");
+                }
+                else if(fromus.isChecked() && touy.isChecked()){
+                    conversao = (Double.valueOf(valor) / cotacaodolp);
+                    NumberFormat z = NumberFormat.getCurrencyInstance();
+                    NumberFormat.getCurrencyInstance().format(conversao);
+
+                    String convert = conversao.toString().trim();
+
+                    ver_check.setText(convert + " UYU");
+                }
+            }
+        });
+    }
 }

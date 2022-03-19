@@ -43,35 +43,37 @@
         android:textColor="@color/black"
         android:id="@+id/from"
         />
-
-    <CheckBox
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/br"
-        android:id="@+id/frombr"
-        />
+        android:id="@+id/group">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/br"
+            android:checked="true"
+            android:id="@+id/frombr"
+            />
 
-    <CheckBox
-        android:id="@+id/fromuy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/uy" />
+        <RadioButton
+            android:id="@+id/fromuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/uy" />
 
-    <CheckBox
-        android:id="@+id/fromus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/us" />
+        <RadioButton
+            android:id="@+id/fromus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/us" />
+    </RadioGroup>
 
     // END FROM
 
@@ -88,35 +90,38 @@
         android:id="@+id/to"
         />
 
-    <CheckBox
-        android:id="@+id/tobr"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/br" />
+        android:id="@+id/group2">
 
-    <CheckBox
-        android:id="@+id/touy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="30dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/uy" />
+        <RadioButton
+            android:id="@+id/tobr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="175dp"
+            android:layout_marginEnd="30dp"
+            android:checked="true"
+            android:text="@string/br" />
 
-    <CheckBox
-        android:id="@+id/tous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="175dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
-        android:onClick="onCheckboxClicked"
-        android:text="@string/us" />
+        <RadioButton
+            android:id="@+id/touy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="175dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/uy" />
 
+        <RadioButton
+            android:id="@+id/tous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="175dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/us" />
+    </RadioGroup>
     // END TO
 
     <TextView
@@ -166,17 +171,20 @@
         android:id="@+id/lytResult"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginTop="90dp"
         >
 
         <TextView
             android:id="@+id/txtResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="@string/result"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:id="@+id/txtresult"
             android:layout_alignParentEnd="true"/>
 
